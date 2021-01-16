@@ -47,8 +47,9 @@ def find_pic(ext, files_list):
 
 
 def gen_path():
+
     for count in range(0,len(pict_list)):
-        yield pict_list[count]
+        return pict_list[count]
 
 
 def give_me_a_pic_path():
@@ -56,5 +57,9 @@ def give_me_a_pic_path():
     find_pic(template, file_list)
     x = gen_path()
     # for _ in range(0,len(pict_list)):
-    yield print(x.__next__())
+    count = 0
+    while count != len(pict_list):
+        x = pict_list[count]
+        count += 1
+        yield x
 
