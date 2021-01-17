@@ -53,12 +53,13 @@ def gen_path():
 
 if __name__ == '__main__':
     what_is_what(pat)
-    find_pic(template, file_list)
+    find_pic('jpg', file_list)
+    find_pic('png', file_list)
 x = gen_path()
-# for _ in range(0,len(pict_list)):
-#     print(x.__next__())
-print(x.__next__())
-print(x.__next__())
+for _ in range(0,len(pict_list)):
+    print(x.__next__())
+# print(x.__next__())
+# print(x.__next__())
 print(len(pict_list))
 
 

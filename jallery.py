@@ -4,14 +4,15 @@ import sys
 platformOS = sys.platform
 
 if platformOS == 'linux':
-    pat = '/home/drak/jallery'
+    pat = '/home/drak/jallery/home/test/pic'
+    #      /home/drak/jallery/home/test/pic/
 elif platformOS == 'win32':
     pat = 'c:/'
 
 dir_list = []
 file_list = []
 pict_list = []
-template = 'jpg'
+template: str = 'jpg'
 pic = str
 
 
@@ -42,7 +43,7 @@ def find_pic(ext, files_list):
 
     for count in range(0, len(files_list)):
         if files_list[count].split('.')[-1] == ext:
-            pict_list.append(os.getcwd() + '/' + files_list[count])
+            pict_list.append(pat + '/' + files_list[count])
     return pict_list
 
 
@@ -53,8 +54,13 @@ def gen_path():
 
 
 def give_me_a_pic_path():
-    what_is_what('/home/drak/')
+    what_is_what(pat)
     find_pic(template, file_list)
+    find_pic('png',file_list)
+    find_pic('gif',file_list)
+    find_pic('svg',file_list)
+    # find_pic('png',file_list)
+
     x = gen_path()
     # for _ in range(0,len(pict_list)):
     count = 0
