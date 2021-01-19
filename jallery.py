@@ -4,7 +4,7 @@ import sys
 platformOS = sys.platform
 
 if platformOS == 'linux':
-    pat = '/home/drak/jallery/'
+    pat = '/home/drak/jallery/home/test/pic'
 elif platformOS == 'win32':
     pat = 'c:/Jallery/'
 
