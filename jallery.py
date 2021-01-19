@@ -4,7 +4,7 @@ import sys
 platformOS = sys.platform
 
 if platformOS == 'linux':
-    pat = '/home/drak/jallery/home/test/pic'
+    pat = '/home/drak/jallery/'
 elif platformOS == 'win32':
     pat = 'c:/Jallery/'
 
@@ -14,6 +14,20 @@ pict_list = []
 template: str = 'jpg'
 pic = str
 
+
+def new_user(name):
+    os.chdir(pat)
+    if not os.path.exists('home'):
+        os.mkdir('home')
+    os.chdir('home')
+    if os.path.exists(name):
+        return 'juz jest taki kastalog'
+    else:
+        os.mkdir(name)
+
+    os.chdir(name)
+    os.mkdir('pic')
+    print('utworzone')
 
 def what_is_what(pat):
     try:
