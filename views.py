@@ -9,7 +9,8 @@ def index(request):
     return HttpResponse("Hello, world. You're at the Jallery Home Page.")
 
 
-def jalery(request):
-
-    pict_list = jallery.give_me_a_pic_path()
-    return HttpResponse(pict_list.__next__())
+def test(request):
+    list = [1,2,3,4,5,6,7,8,9]
+    # jallery.give_me_a_pic_path()
+    # list = jallery.pict_list()
+    return render(request, "new_app/test.html", {"list": list})
